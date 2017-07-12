@@ -1,11 +1,12 @@
+package padilla.guerra.oswaldo.randy;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 
 public class Listasimple<Item> implements Iterable<Item> {
-    private Node<Item> primero;    // principio de la Listasimple
-    private int n;               // numero de elementos en Listasimple
+    private Node<Item> primero;    // principio de la padilla.guerra.oswaldo.randy.Listasimple
+    private int n;               // numero de elementos en padilla.guerra.oswaldo.randy.Listasimple
 
     // ayuda de la clase de la lista
     private static class Node<Item> {
@@ -14,7 +15,7 @@ public class Listasimple<Item> implements Iterable<Item> {
     }
 
     /**
-     * Inicializa una Listasimple.
+     * Inicializa una padilla.guerra.oswaldo.randy.Listasimple.
      */
     public Listasimple() {
        primero = null;
@@ -22,9 +23,9 @@ public class Listasimple<Item> implements Iterable<Item> {
     }
 
     /**
-     * Retorna true si Listasimple es vacia.
+     * Retorna true si padilla.guerra.oswaldo.randy.Listasimple es vacia.
      *
-     * @return {true} si esta Listasimple es vacia;
+     * @return {true} si esta padilla.guerra.oswaldo.randy.Listasimple es vacia;
      *         {false} si es distinto.Se entiende
      */
     public boolean estaVacia() {
@@ -32,18 +33,18 @@ public class Listasimple<Item> implements Iterable<Item> {
     }
 
     /**
-     * Retorna el numero de items en esta Listasimple.
+     * Retorna el numero de items en esta padilla.guerra.oswaldo.randy.Listasimple.
      *
-     * @retorna el numero de items en esta Listasimple
+     * @retorna el numero de items en esta padilla.guerra.oswaldo.randy.Listasimple
      */
     public int size() {
         return n;
     }
 
     /**
-     * Agregar el item para esta Listasimple.
+     * Agregar el item para esta padilla.guerra.oswaldo.randy.Listasimple.
      *
-     * @param  item Agregar el item para esta Listasimple.
+     * @param  item Agregar el item para esta padilla.guerra.oswaldo.randy.Listasimple.
      */
     public void add(Item item) {
         Node<Item> anterior = primero;
@@ -55,9 +56,9 @@ public class Listasimple<Item> implements Iterable<Item> {
 
 
     /**
-     * Retorna un iterator que itere encima del items in esta Agregar el item para esta Listasimple. en orden arbitrario.
+     * Retorna un iterator que itere encima del items in esta Agregar el item para esta padilla.guerra.oswaldo.randy.Listasimple. en orden arbitrario.
      *
-     * @retornar  un iterator que itere encima del items in esta Agregar el item para esta Listasimple. en orden arbitrario.
+     * @retornar  un iterator que itere encima del items in esta Agregar el item para esta padilla.guerra.oswaldo.randy.Listasimple. en orden arbitrario.
      */
     public Iterator<Item> iterator()  {
         return new ListIterator<Item>(primero);  

@@ -1,3 +1,5 @@
+package padilla.guerra.oswaldo.randy;
+
 import java.util.Scanner;
 
 public class Kruskal {
@@ -99,7 +101,7 @@ public class Kruskal {
                 int x = f.cualquiera(), y = f.otro(x);
                 if (!uf.connectado(x, y)) {
                     if (f.peso() < e.peso()) {
-                        System.err.println("Arista " + f + " violar las condiciones de optimacion en el corte");
+                        System.err.println("padilla.guerra.oswaldo.randy.Arista " + f + " violar las condiciones de optimacion en el corte");
                         return false;
                     }
                 }

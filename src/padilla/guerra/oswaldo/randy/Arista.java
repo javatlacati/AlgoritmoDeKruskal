@@ -1,4 +1,6 @@
-public class Arista implements Comparable<Arista> { 
+package padilla.guerra.oswaldo.randy;
+
+public class Arista implements Comparable<Arista> {
 
     private final int v;
     private final int w;

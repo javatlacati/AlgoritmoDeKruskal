@@ -1,5 +1,5 @@
+package padilla.guerra.oswaldo.randy;
 
-import java.util.Scanner;
 import java.util.Stack;
 
 

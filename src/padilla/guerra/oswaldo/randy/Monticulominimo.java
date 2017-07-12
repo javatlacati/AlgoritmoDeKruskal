@@ -1,3 +1,4 @@
+package padilla.guerra.oswaldo.randy;
 
 import java.util.Comparator;
 import java.util.Iterator;
@@ -94,7 +95,7 @@ public class Monticulominimo<Llave> implements Iterable<Llave>{
         return pq[1];
     }
 
-    // ayudar para la doble funcion del tamaño del arreglo de monticulo
+    // ayudar para la doble funcion del tamaï¿½o del arreglo de monticulo
     private void resize(int capacity) {
         assert capacity > n;
         Llave[] temp = (Llave[]) new Object[capacity];
@@ -110,7 +111,7 @@ public class Monticulominimo<Llave> implements Iterable<Llave>{
      * @param  x la llave para agregar para esta cola con prioridad
      */
     public void insertar(Llave x) {
-        // doble tamaño del arreglo si es necesario
+        // doble tamaï¿½o del arreglo si es necesario
         if (n == pq.length - 1) resize(2 * pq.length);
 
         // agregar x, and percolate it up to maintain heap invariant
@@ -120,9 +121,9 @@ public class Monticulominimo<Llave> implements Iterable<Llave>{
     }
 
     /**
-     * Remueve y retorna una llave pequeña en esta cola con prioridad
+     * Remueve y retorna una llave pequeï¿½a en esta cola con prioridad
      *
-     * @retorna una llave pequeñas en esta cola con prioridad
+     * @retorna una llave pequeï¿½as en esta cola con prioridad
      * @throws NoSuchElementException si esta cola con prioridad esta vacia
      */
     public Llave delMin() {
