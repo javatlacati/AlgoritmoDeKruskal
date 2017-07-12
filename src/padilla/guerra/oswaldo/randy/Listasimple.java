@@ -18,7 +18,7 @@ public class Listasimple<Item> implements Iterable<Item> {
      * Inicializa una padilla.guerra.oswaldo.randy.Listasimple.
      */
     public Listasimple() {
-       primero = null;
+        primero = null;
         n = 0;
     }
 
@@ -26,7 +26,7 @@ public class Listasimple<Item> implements Iterable<Item> {
      * Retorna true si padilla.guerra.oswaldo.randy.Listasimple es vacia.
      *
      * @return {true} si esta padilla.guerra.oswaldo.randy.Listasimple es vacia;
-     *         {false} si es distinto.Se entiende
+     * {false} si es distinto.Se entiende
      */
     public boolean estaVacia() {
         return primero == null;
@@ -35,7 +35,7 @@ public class Listasimple<Item> implements Iterable<Item> {
     /**
      * Retorna el numero de items en esta padilla.guerra.oswaldo.randy.Listasimple.
      *
-     * @retorna el numero de items en esta padilla.guerra.oswaldo.randy.Listasimple
+     * @return el numero de items en esta padilla.guerra.oswaldo.randy.Listasimple
      */
     public int size() {
         return n;
@@ -44,7 +44,7 @@ public class Listasimple<Item> implements Iterable<Item> {
     /**
      * Agregar el item para esta padilla.guerra.oswaldo.randy.Listasimple.
      *
-     * @param  item Agregar el item para esta padilla.guerra.oswaldo.randy.Listasimple.
+     * @param item Agregar el item para esta padilla.guerra.oswaldo.randy.Listasimple.
      */
     public void add(Item item) {
         Node<Item> anterior = primero;
@@ -58,10 +58,10 @@ public class Listasimple<Item> implements Iterable<Item> {
     /**
      * Retorna un iterator que itere encima del items in esta Agregar el item para esta padilla.guerra.oswaldo.randy.Listasimple. en orden arbitrario.
      *
-     * @retornar  un iterator que itere encima del items in esta Agregar el item para esta padilla.guerra.oswaldo.randy.Listasimple. en orden arbitrario.
+     * @return un iterator que itere encima del items in esta Agregar el item para esta padilla.guerra.oswaldo.randy.Listasimple. en orden arbitrario.
      */
-    public Iterator<Item> iterator()  {
-        return new ListIterator<Item>(primero);  
+    public Iterator<Item> iterator() {
+        return new ListIterator<Item>(primero);
     }
 
     //  si un terador, no esta implementando remove() esto es opcional
@@ -72,17 +72,24 @@ public class Listasimple<Item> implements Iterable<Item> {
             actual = primero;
         }
 
-        public boolean hasNext()  { return actual != null;                     }
-        public void quitar()      { throw new UnsupportedOperationException();  }
-    
+        public boolean hasNext() {
+            return actual != null;
+        }
+
+        public void quitar() {
+            throw new UnsupportedOperationException();
+        }
+
         public Item next() {
-            if (!hasNext()) throw new NoSuchElementException();
+            if (!hasNext()) {
+                throw new NoSuchElementException();
+            }
             Item item = actual.item;
-            actual = actual.siguiente; 
+            actual = actual.siguiente;
             return item;
-            
-           }
+
+        }
     }
-    
+
 }
 

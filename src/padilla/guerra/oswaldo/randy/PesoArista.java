@@ -3,17 +3,17 @@ package padilla.guerra.oswaldo.randy;
 import java.util.Stack;
 
 
-public class PesoArista{
-    
+public class PesoArista {
+
 
     private final int V;
     private int E;
     private Listasimple<Arista>[] adj;
-    
+
     /**
      * Inicializar una vacia arista-peso grafo con {V} vertices y arista 0.
      *
-     * @param  V el numero de vertices
+     * @param V el numero de vertices
      * @throws IllegalArgumentException if {V < 0}
      */
     public PesoArista(int V) {
@@ -26,14 +26,14 @@ public class PesoArista{
         }
     }
 
-  
+
     /**
      * Inicializa una nuevo arista-peso grafo que es una copia profunda de {G}.
      *
-     * @param  G la arista-peso grfo para copiar
+     * @param G la arista-peso grfo para copiar
      */
-    
-    
+
+
     public PesoArista(PesoArista G) {
         this(G.V());
         this.E = G.E();
@@ -71,13 +71,13 @@ public class PesoArista{
     // throw IllegalArgumentException a no ser que {0 <= v < V}
     private void validarVertice(int v) {
         if (v < 0 || v >= V)
-            throw new IllegalArgumentException("vertice " + v + " no esta entre 0 y " + (V-1));
+            throw new IllegalArgumentException("vertice " + v + " no esta entre 0 y " + (V - 1));
     }
 
     /**
      * Agregar directo la arista {e} para esto: arista-peso del grafo.
      *
-     * @param  e la arista
+     * @param e la arista
      * @throws IllegalArgumentException a no ser que ambos puntosfinales estan entre {0} y {V-1}
      */
     public void agregarArista(Arista e) {
@@ -93,24 +93,24 @@ public class PesoArista{
     /**
      * Retornas la arista incidente en el vertice {v}.
      *
-     * @param  v el vertice
+     * @param v el vertice
      * @return la arista incidente en el vertice {v} cuando es un Iterable
      * @throws IllegalArgumentException a no ser que {0 <= v < V}
      */
     public Iterable<Arista> adj(int v) {
-    	validarVertice(v);
+        validarVertice(v);
         return adj[v];
     }
 
     /**
      * Retorna el grado del vertice {v}.
      *
-     * @param  v el vertice
-     * @return el grado del vertice {v}               
+     * @param v el vertice
+     * @return el grado del vertice {v}
      * @throws IllegalArgumentException unless {0 <= v < V}
      */
     public int grado(int v) {
-    	validarVertice(v);
+        validarVertice(v);
         return adj[v].size();
     }
 
@@ -122,7 +122,7 @@ public class PesoArista{
      * @retornar todas las aristas en esta arista-peso grafo, cuando es un iterable
      */
     public Iterable<Arista> aristas() {
-    	Listasimple<Arista> list = new Listasimple<Arista>();
+        Listasimple<Arista> list = new Listasimple<Arista>();
         for (int v = 0; v < V; v++) {
             int selfLoops = 0;
             for (Arista e : adj(v)) {
@@ -139,6 +139,5 @@ public class PesoArista{
         return list;
     }
 
-    
-        
-    }
+
+}

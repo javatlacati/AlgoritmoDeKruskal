@@ -68,7 +68,7 @@ public class Monticulominimo<Llave> implements Iterable<Llave>{
     /**
      * Retornar true si esta cola con prioridad esta vacia.
      *
-     * @retornar {true} si esta cola con prioridad esta vacia;
+     * @return {true} si esta cola con prioridad esta vacia;
      *         {false} si es distinto
      */
     public boolean estaVacia() {
@@ -78,7 +78,7 @@ public class Monticulominimo<Llave> implements Iterable<Llave>{
     /**
      * Retorna the numero de llaves en esta cola con prioridad.
      *
-     * @retornar el numero de llaves en esta cola con prioridad
+     * @return el numero de llaves en esta cola con prioridad
      */
     public int tamanio() {
         return n;
@@ -123,7 +123,7 @@ public class Monticulominimo<Llave> implements Iterable<Llave>{
     /**
      * Remueve y retorna una llave peque�a en esta cola con prioridad
      *
-     * @retorna una llave peque�as en esta cola con prioridad
+     * @return una llave peque�as en esta cola con prioridad
      * @throws NoSuchElementException si esta cola con prioridad esta vacia
      */
     public Llave delMin() {
@@ -199,7 +199,7 @@ public class Monticulominimo<Llave> implements Iterable<Llave>{
      * <p>
      * The iterator no esta implementado {remove()} esto ya es es opcional.
      *
-     * @retorna un iterador que itera encima de las llaves en orden ascendiendo
+     * @return un iterador que itera encima de las llaves en orden ascendiendo
      */
     public Iterator<Llave> iterator() { return new HeapIterator(); }
 
