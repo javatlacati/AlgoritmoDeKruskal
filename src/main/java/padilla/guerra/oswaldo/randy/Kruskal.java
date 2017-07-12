@@ -1,20 +1,19 @@
 package padilla.guerra.oswaldo.randy;
 
-import java.util.Scanner;
-
 public class Kruskal {
     private static final double FLOATING_POINT_EPSILON = 1E-12;
 
     private double peso;                        // peso
-    private ColaPri<Arista> mst = new ColaPri<Arista>();  // aristas del algoritmo
+    private ColaPri<Arista> mst = new ColaPri<>();  // aristas del algoritmo
 
     /**
      * Ordenar el arbol de recubrimiento minimo de una: arista-peso del grafo.
+     *
      * @param G: la arista-peso grafo.
      */
     public Kruskal(PesoArista G) {
         // mejor eficiencia del monticulo pasando por el arreglo de aristas
-        Monticulominimo<Arista> pq = new Monticulominimo<Arista>();
+        Monticulominimo<Arista> pq = new Monticulominimo<>();
         for (Arista e : G.aristas()) {
             pq.insertar(e);
         }
@@ -22,7 +21,7 @@ public class Kruskal {
         // recorrido del algoritmo
         UF uf = new UF(G.V());
         while (!pq.estaVacia() && mst.tamanio() < G.V() - 1) {
-        	Arista e = pq.delMin();
+            Arista e = pq.delMin();
             int v = e.cualquiera();
             int w = e.otro(v);
             if (!uf.connectado(v, w)) { // v-w no estan creando un ciclo
@@ -38,8 +37,9 @@ public class Kruskal {
 
     /**
      * Retorna las arista en un arbol de recubrimiento minimo.
+     *
      * @retorna las arista en un arbol de recubrimiento minimo o como
-     *    un iterable de aristas
+     * un iterable de aristas
      */
     public Iterable<Arista> aristas() {
         return mst;
@@ -47,12 +47,13 @@ public class Kruskal {
 
     /**
      * Retorna la suma de los pesos de las aristas en un arbol de recubrimieno minimo.
+     *
      * @retorna la suma de los pesos de las aristas en un arbol de recubrimieno minimo.
      */
     public double peso() {
         return peso;
     }
-    
+
     // chequear las condiciones de optimacion (tomandolo en tiempo dado para E V lg* V)
     private boolean chequear(PesoArista G) {
 
@@ -95,7 +96,7 @@ public class Kruskal {
                 int x = f.cualquiera(), y = f.otro(x);
                 if (f != e) uf.union(x, y);
             }
-            
+
             // chequear que e es una arista con peso minimo en el corte de cruce
             for (Arista f : G.aristas()) {
                 int x = f.cualquiera(), y = f.otro(x);
@@ -114,15 +115,25 @@ public class Kruskal {
 
 
     public static void main(String[] args) {
-    	System.out.println("Ingrese los nodos: ");
-    	Scanner n=new Scanner(System.in);
-    	int n1=n.nextInt();
-        PesoArista G = new PesoArista(n1);
-        Kruskal mst = new Kruskal(G);
-        for (Arista e : mst.aristas()) {
-            System.out.println(e);
-        }
-        System.out.printf("%.5f\n", mst.peso());
+//  El primer arreglo corresponde al estado actual del reino expresado como una matriz de adyacencias \para indicar si existe ("1) o no ("0") una carretera entre esas ciudades del del reino.
+
+
+//        El segundo arreglo representa el costo de construcción de nuevas carreteras expresado una matriz de adyacencias. En la celda i,j se encuentra el costo de construir una carretera desde la ciudad i hasta la j, codificado como un letra, donde 'A', 'B', ..., 'Z' representa el costo 0, 1, ..., 25, respectivamente y 'a', 'b', ..., 'z' representa el costo 26, 27, ..., 51, respectivamente.
+
+
+//        El tercer arreglo representa el costo de demoler caminos como una matriz de adyacencias.En la celda i,j se encuentra el costo de demoler una carretera desde la ciudad i hasta la j, codificada en texto similar al arreglo de construcción.
+
+
+
+//    	System.out.println("Ingrese los nodos: ");
+//    	Scanner n=new Scanner(System.in);
+//    	int n1=n.nextInt();
+//        PesoArista G = new PesoArista(n1);
+//        Kruskal mst = new Kruskal(G);
+//        for (Arista e : mst.aristas()) {
+//            System.out.println(e);
+//        }
+//        System.out.printf("%.5f\n", mst.peso());
     }
 
 }
