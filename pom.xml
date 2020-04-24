@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>padilla.guerra.oswaldo.randy</groupId>
-    <artifactId>Algoritmo de Kruskal</artifactId>
+    <artifactId>algoritmo-de-kruskal</artifactId>
     <version>0.1-SNAPSHOT</version>
 
     <dependencies>
